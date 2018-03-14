@@ -2,8 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="false">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -23,6 +22,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -30,41 +30,46 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
                     android:layout_marginStart="15dp"
-                    android:text="@string/app_name"
                     android:textColor="@color/colorWhite"
                     android:textSize="17sp" />
-
-                <FrameLayout
-                    android:id="@+id/fl_setting"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginRight="15dp">
-
-                    <ImageView
-                        android:id="@+id/iv_setting"
-                        android:layout_width="27dp"
-                        android:layout_height="27dp"
-                        android:layout_gravity="center_vertical"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:padding="4dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/ic_setting" />
-                </FrameLayout>
             </RelativeLayout>
         </android.support.v7.widget.Toolbar>
-
     </android.support.design.widget.AppBarLayout>
 
-    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-        android:id="@+id/calendarView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:mcv_selectionColor="#00F"
-        app:mcv_showOtherDates="all" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/rl_change_background"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="更换背景"
+                android:textColor="@color/colorFont"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/img_arrow_right" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F9F9F9" />
+    </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
 

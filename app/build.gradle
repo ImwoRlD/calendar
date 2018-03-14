@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
@@ -33,4 +34,9 @@ dependencies {
     implementation project(':greendaolib')
     compile "org.jetbrains.anko:anko-commons:$anko_version"
     compile "org.jetbrains.anko:anko-sdk25:$anko_version"
+    compile("com.github.hotchemi:permissionsdispatcher:3.1.0") {
+        // if you don't use android.app.Fragment you can exclude support for them
+        exclude module: "support-v13"
+    }
+    kapt "com.github.hotchemi:permissionsdispatcher-processor:3.1.0"
 }
